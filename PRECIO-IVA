@@ -1,0 +1,26 @@
+#include "stdafx.h"//librerias
+#include "conio.h"
+#include <iostream>
+using namespace std;
+float precio(float p);// prototipo
+
+
+void main ()//programa principal
+
+{  float p, i;//tipo de datos
+	cout<<" Ingree el precio del producto"<<endl;
+    cin>>p;
+
+	i=precio(p);
+
+	cout<<"El precio del Producto con cargo del IVA es:"<<i;
+	getch();
+}
+
+float precio(float p)
+
+{ float s,r,IVA=0.13;
+    r=p*IVA;
+    s=r+p;
+  return s;
+}
