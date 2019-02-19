@@ -1,0 +1,30 @@
+#include "stdafx.h"
+#include <iostream> 
+#include "conio.h"
+#include "math.h"
+
+using namespace std;
+
+float serie(float n, float x);
+void main()
+{float x,n,s=0;
+cout<<"ingrese el limite deL FACTORIAL"<<endl;
+cin>>n;
+cout<<"ingrese la base"<<endl;
+cin>>x;
+s=serie(n,x);
+cout<<"el resultado deL FACTORIAL es:"<<s<<endl;
+getch();
+}
+
+float serie(float n, float x)//  serie--(x¨n/n!)
+{float s=0,p=1,r=1;
+    for(int i=1;i<=n;i++)
+	{ p=p*x;
+	  r=r*i;
+	  s=s+(p/r);
+	}
+
+return s;
+}
+
