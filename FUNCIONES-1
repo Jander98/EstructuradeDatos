@@ -1,0 +1,27 @@
+#include "stdafx.h"
+#include <iostream> 
+#include "conio.h"
+#include "math.h"
+
+using namespace std;
+int poten (int x, int y);
+void main()
+
+{int x,y,p,n;
+
+cout<<"ingrese la base"<<endl;
+cin>>x;
+cout<<"ingrese el exponente"<<endl;
+cin>>y;
+p=poten(x,y);
+cout<<"el resultado es:"<<p<<endl;
+getch();
+}
+int poten (int x, int y)
+{int n=1,s=0;
+  while(s<y)
+  {  s++;
+     n=n*x;
+  }
+  return n;
+}
