@@ -1,0 +1,66 @@
+trinagulo.h
+
+#pragma once
+class triangulo
+{
+private:
+  float base;
+  float altura;
+
+public:
+	triangulo(void);
+	~triangulo(void);
+	float area(float _base, float _altura);
+	float area();
+};
+
+
+
+trinagulo.cpp
+
+#include "StdAfx.h"
+#include "triangulo.h"
+#include <iostream>
+using namespace std;
+
+
+triangulo::triangulo(void)
+{base=10;
+ altura=15;
+}
+
+
+triangulo::~triangulo(void)
+{
+}
+float triangulo::area(float _base, float _altura)
+{float aux;
+
+aux=(_base*_altura)/2;
+return aux;
+}
+float triangulo::area()
+{
+	float aux;
+
+aux=(base*altura)/2;
+return aux;
+}
+
+Piramide.main
+
+#include "stdafx.h"
+#include "triangulo.h"
+#include <iostream>
+#include "conio.h"
+using namespace std;
+
+
+void main()
+{triangulo ti;
+cout<<"el area es: "<<ti.area()<<endl;
+cout<<"el area es: "<<ti.area(12,7)<<endl;
+getch();
+
+
+}
