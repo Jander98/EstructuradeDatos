@@ -1,0 +1,79 @@
+palindrom.h
+
+#pragma once
+#include<iostream>
+#include <string.h>
+using namespace std;
+class palindrom
+{private:
+    string cad; 
+	 int n;
+
+
+public:
+	palindrom(string b);
+	~palindrom(void);
+	bool palin();
+
+
+};
+
+
+palindrom.cpp
+
+#include "StdAfx.h"
+#include "palindrom.h"
+#include <string.h>
+
+palindrom::palindrom(string b)
+{cad=b;
+}
+
+
+palindrom::~palindrom(void)
+{
+}
+bool palindrom::palin()
+{bool aux=true;
+	for(int i=0; i<cad.length()/2; i++)
+	{
+        if(cad[i] == cad[cad.length()-1-i])
+            return  true;
+		else
+			return false;
+        
+    }
+    
+
+
+
+}
+
+
+Palindromo1.main
+
+#include "stdafx.h"
+#include "stdafx.h"
+#include<iostream>
+#include <string>
+#include "conio.h"
+#include "palindrom.h"
+using namespace std;
+
+void main()
+{string cad;
+ cout<<"ingrese la palabra:"<<endl;
+ getline(cin,cad);
+ 
+ palindrom p1(cad);
+
+ if(p1.palin()==true)
+       cout << "La palabra ingresada es palindromo " << endl;
+     else 
+        cout << "La palabra ingresada no es palindromo " << endl;
+getch();
+
+
+
+
+}
