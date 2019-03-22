@@ -1,0 +1,118 @@
+fechasss.h
+
+#pragma once
+#include <string>
+#include <iostream>
+using namespace std;
+class fechasss
+{private:
+string date;
+int f,d,m,a;
+
+public:
+	fechasss(string n);
+	fechasss(long t);
+	fechasss(int o,int p, int r);
+	~fechasss(void);
+	string formal();
+	int corrido();
+	int separado();
+
+};
+
+
+
+fechasss.cpp
+
+#include "StdAfx.h"
+#include "fechasss.h"
+#include <string>
+#include <iostream>
+using namespace std;
+
+fechasss::fechasss(string n)
+{date=n;
+}
+fechasss::fechasss(long t)
+{f=t;
+}
+fechasss::fechasss(int o,int p, int r)
+{d=o;
+m=p;
+a=r;
+}
+
+
+fechasss::~fechasss(void)
+{
+}
+
+string fechasss::formal()
+{if((date.at(2)=='/') && (date.at(5)=='/'))
+	{
+		int dia=(atoi(date.substr(0,2).c_str()));
+		int mes=(atoi(date.substr(3,2).c_str()));
+		int año=(atoi(date.substr(6,4).c_str()));
+	cout<<"La fecha 1 es: "<<dia<<"/"<<mes<<"/"<<año<<endl;
+
+}
+}
+int fechasss::corrido()
+
+{int dia,mes,año;
+dia=f/1000000;
+mes=(f-dia*1000000)/10000;
+año=f-dia*1000000-mes*10000;
+cout<<"La fecha 2 es: "<<dia<<"/"<<mes<<"/"<<año<<endl;
+
+}
+
+
+int fechasss::separado()
+
+{cout<<"La fecha 3 es: "<<d<<"/"<<m<<"/"<<a<<endl;
+
+
+}
+
+
+fechas1.main
+
+#include "stdafx.h"
+#include "fechasss.h"
+#include <string>
+#include "conio.h"
+#include <iostream>
+using namespace std;
+
+
+void main()
+{string date;
+int f,d,m,a;
+
+cout<<"1. ingrese la fecha en formato formal: ";
+getline(cin,date);
+fechasss f1(date);
+f1.formal();
+cout<<endl;
+
+cout<<"2. ingrese la fecha en formato numerico: ";
+cin>>f;
+fechasss f2(f);
+f2.corrido();
+cout<<endl;
+
+cout<<"3. ingrese la fecha en formato separado: "<<endl;
+cout<<"dia:";cin>>d;
+cout<<"mes:";cin>>m;
+cout<<"año:";cin>>a;
+fechasss f3(d,m,a);
+f3.separado();
+
+
+
+getch();
+
+
+
+}
